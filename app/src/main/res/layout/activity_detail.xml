@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageViewBigPoster"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/textViewLabelTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Название:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBigPoster" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCenter"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBigPoster" />
+
+    <TextView
+        android:id="@+id/textViewLabelTitleOriginal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Оригенальное название:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+    <TextView
+        android:id="@+id/textViewOriginalTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCenter"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+    <TextView
+        android:id="@+id/textViewLabelRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Рейтинг:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOriginalTitle" />
+
+    <TextView
+        android:id="@+id/textViewRating"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCenter"
+        app:layout_constraintTop_toBottomOf="@+id/textViewOriginalTitle" />
+
+    <TextView
+        android:id="@+id/textViewLabelRealiseDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Дата релиза:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRating" />
+
+    <TextView
+        android:id="@+id/textViewRealiseDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guidelineCenter"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRating" />
+
+    <TextView
+        android:id="@+id/textViewLabelDescription"
+        android:layout_width="61dp"
+        android:layout_height="22dp"
+        android:text="Описание:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRealiseDate" />
+
+    <TextView
+        android:id="@+id/textViewOverview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewLabelDescription" />
+
+    <ImageView
+        android:id="@+id/imageViewAddToFavorit"
+        android:layout_width="92dp"
+        android:layout_height="76dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBigPoster"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBigPoster"
+        app:srcCompat="@drawable/favourite_add_to" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
