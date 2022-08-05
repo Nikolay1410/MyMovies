@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageViewBigPoster"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:srcCompat="@drawable/ic_launcher_foreground"
+        android:contentDescription="@string/description_poster_film" />
+
+
+    <ImageView
+        android:id="@+id/imageViewAddToFavourite"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="onClickChangeFavourite"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewBigPoster"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/favourite_remove"
+        android:contentDescription="@string/add_button" />
+    <ScrollView
+        android:id="@+id/scrollViewInfo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageViewBigPoster">
+
+        <include
+            layout="@layout/movie_info"
+            android:id="@+id/movieInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

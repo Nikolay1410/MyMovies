@@ -1,5 +1,6 @@
 package com.example.mymovies.Adapter;
 
+import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,7 +48,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
 
     @Override
     public void onBindViewHolder(@NonNull MovieViewHolder holder, int position) {
-        if (position > movies.size()-4 && onReachEndListener!=null){
+        if (movies.size() >= 20 && position > movies.size()-4 && onReachEndListener!=null){
             onReachEndListener.onReachEnd();
         }
     Movie movie = movies.get(position);
@@ -60,30 +61,35 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     }
 
     class MovieViewHolder extends RecyclerView.ViewHolder {
-        private ImageView imageViewSmallPoster;
+        private final ImageView imageViewSmallPoster;
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);
             imageViewSmallPoster = itemView.findViewById(R.id.imageViewSmallPoster);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if(onPosterClickListener!=null){
-                        onPosterClickListener.onPosterClick(getAdapterPosition());
-                    }
+            itemView.setOnClickListener(view -> {
+                if(onPosterClickListener!=null){
+                    onPosterClickListener.onPosterClick(getAdapterPosition());
                 }
             });
         }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    public void clear(){
+        this.movies.clear();
+        notifyDataSetChanged();
     }
 
     public List<Movie> getMovies() {
         return movies;
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void addMovie(List<Movie> movies){
         this.movies.addAll(movies);
         notifyDataSetChanged();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void setMovies(List<Movie> movies) {
         this.movies = movies;
         notifyDataSetChanged();
